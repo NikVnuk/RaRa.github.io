@@ -1,0 +1,54 @@
+.nav{
+	display: flex;
+	background-color: darkolivegreen;
+}
+.nav-list{
+	display: flex;
+}
+.nav-list a{
+	display: block;
+	padding: 1em;
+	text-decoration: none;
+	color: white;
+}
+.nav-list a:hover{
+	background-color: black;
+}
+.nav-btn{
+	display: none;
+}
+
+
+
+.rara{
+	height: 2.5em;
+}
+
+
+@media(max-width: 1000px){
+	.nav-btn{
+		display: block;
+		font-size: 2em;
+		padding-inline: 10px;
+		padding-bottom: 3px;
+		border: none;
+		background-color: darkolivegreen;
+		color: white;
+		cursor: pointer;
+	}
+	.nav-list{
+		display: none;
+	}
+	.nav-btn:hover{
+		background-color: black;
+	}
+	.drop:hover .nav-list{
+		display: block;
+		position: absolute;
+		right: 10px;
+		background-color: darkolivegreen;
+	}
+	.nav{
+		justify-content: space-between;
+	}	
+}
