@@ -70,14 +70,31 @@
 			align-items: flex-end;
 		}
 			#bear_1{
-				transform: rotateY(180deg);
+				transform: rotateY(180deg); 
+				animation: slade1 6s infinite; 
 				}
+			#bear_2{
+				animation: slade2 6s infinite; 
+			}	
 			#bear_1,
 			#bear_2{
-				width: 10vw;
+				width: 10vw; 
+				animation-delay: 1s;
+			}
+			@keyframes slade1
+			{
+				0%, 10% {transform: translateX(0) rotateY(180deg);} 
+				20%, 30% {transform: translateX(-70%) rotateY(180deg);} 
+				40%, 100% {transform: translateX(0) rotateY(180deg);}  
+			}
+			@keyframes slade2
+			{
+				0%, 10% {transform: translateX(0);} 
+				20%, 30% {transform: translateX(400%);} 
+				40%, 100% {transform: translateX(0);}  
 			}
 			h1{
-				padding-bottom: 2rem;
+				padding-bottom: 0.1rem;
 				text-align: right;
 				animation: colorChange 15s infinite normal;
 			}
@@ -93,8 +110,24 @@
 			}
 			.but{
 				display: flex;
-				justify-content: right;
+				justify-content: right; 	
 			}
+			button{
+				 color: brown; border-radius: 50%; width: 9em; 
+				 margin-bottom: 30px; 
+				 cursor: pointer;
+			}
+			  button:hover{
+			  	height: 3em;
+			  	animation: buttonChenge 1s infinite normal;
+			  }
+			  button:click{
+			  	animation: buttonChenge 1s infinite normal;
+			  }
+			  @keyframes buttonChenge{
+			  	0% {background-color: yellow;}
+			  	50%{background-color: pink;}
+			  }
 			ul{
 				padding-bottom: 2rem;
 				font-size: 0.7rem; font-weight: bold;
@@ -104,22 +137,6 @@
 			ul:hover{
 				color: white;
 			}
-			button{
-				 color: brown; border-radius: 50%; width: 9em; 
-				 margin-bottom: 30px;
-			}
-			  button:hover{
-			  	height: 3em;
-			  	animation: buttonChenge 0.5s infinite normal;
-			  }
-			  button:click{
-			  	animation: buttonChenge 0.5s infinite normal;
-			  }
-			  @keyframes buttonChenge{
-			  	0% {background-color: yellow;}
-			  	50%{background-color: pink;}
-			  }
-
 			  #names{
 			  	font-family: Arial, sans-serif; 
 			  	animation: namecolorChenge 20s infinite normal;
@@ -162,23 +179,26 @@
 				<audio id="player" src="https://myradio24.org/nikvnukov" type="audio/mpeg">
     			Ваш браузер не поддерживает тег audio
     			</audio>
-
-    	
 			</div>
 		<div class="section1">
 			<div class="section2">
 				<div id="bear_inf_2">
-	<!--				<a href="https://myradio24.com/nikvnukov"> -->
-						<img id="bear_1" src="b-happy_3.gif" width="100px">
-	<!--				</a>  -->
-					<a href="http://razvitiye.hostronavt.ru">
+					<img id="bear_1" src="b-happy_3.gif" width="100px">
+					<a style="flex-direction: column;" 
+						href="http://nikvnukovm.temp.swtest.ru">
 						<h1>РАДИО<br>РАЗВИТИЕ</h1>
+						<p style="
+							font-size: 0.9rem; 
+							font-family: Arial, sans-serif; 
+							margin-right: 0;
+							line-height: 0.1;
+							margin-bottom: 1rem;">
+							инструментальный канал
+						</p>
 					</a>
 					<div class="but">
-						<button  onclick="document.getElementById('player').play() "  
-							>Слушать
+						<button  onclick="document.getElementById('player').play() ">Слушать
 						</button>
-						
 					</div>
 					<a id="names" href="https://myradio24.com/nikvnukov">
 						<p>названия треков</p>
